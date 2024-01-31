@@ -45,23 +45,9 @@ function textoNoValido() {
 
 // Validar texto de entrada
 
-function validarTexto(texto) {
-  const textoArreglo = texto.split("");
-  let esValido = true;
-
-  if (texto === "") {
-    esValido = false;
-  } else {
-    textoArreglo.forEach((caracter) => {
-      if (
-        !(caracter.charCodeAt(0) >= 97 && caracter.charCodeAt(0) <= 122) ||
-        caracter.charCodeAt(0) === 32
-      ) {
-        esValido = false;
-      }
-    });
-  }
-  return esValido;
+function validarTexto(cadena) {
+  // Retorna true solamente si la expresión regular encuentra coincidencias en la cadena.
+  return /[A-ZÁÉÍÓÚÜÑ]|[^A-Za-z0-9\s]/.test(cadena);
 }
 
 // Capturar entradas de texto
@@ -69,13 +55,13 @@ function validarTexto(texto) {
 btnEncriptar.addEventListener("click", () => {
   let texto = entrada.value;
 
-  validarTexto(texto) ? encriptar(texto) : textoNoValido();
+  validarTexto(texto) ? textoNoValido() : encriptar(texto);
 });
 
 btnDesencriptar.addEventListener("click", () => {
   let texto = entrada.value;
 
-  validarTexto(texto) ? desencriptar(texto) : textoNoValido();
+  validarTexto(texto) ? textoNoValido() : desencriptar(texto);
 });
 
 // Copiar texto de salida
