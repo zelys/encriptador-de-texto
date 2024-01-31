@@ -12,9 +12,9 @@ const btnCopiar = document.querySelector(".btn-copiar");
 
 function encriptar(texto) {
   salida.value = texto
-    .replaceAll("a", "ai")
     .replaceAll("e", "enter")
     .replaceAll("i", "imes")
+    .replaceAll("a", "ai")
     .replaceAll("o", "ober")
     .replaceAll("u", "ufat");
   avisoSalida.remove();
@@ -23,9 +23,9 @@ function encriptar(texto) {
 
 function desencriptar(texto) {
   salida.value = texto
-    .replaceAll("ai", "a")
     .replaceAll("enter", "e")
     .replaceAll("imes", "i")
+    .replaceAll("ai", "a")
     .replaceAll("ober", "o")
     .replaceAll("ufat", "u");
   avisoSalida.remove();
