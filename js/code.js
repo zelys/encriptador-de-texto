@@ -31,6 +31,7 @@ function desencriptar(texto) {
   avisoSalida.remove();
   btnCopiar.style.visibility = "inherit";
 }
+
 // Aviso de validación
 
 function textoNoValido() {
@@ -46,27 +47,27 @@ function textoNoValido() {
 
 // Validar texto de entrada
 
-function validarTexto(cadena) {
-  // Verificar si la cadena está vacía
-  if (cadena.trim() === "") {
+function validarTexto(entradaTxt) {
+  // Verificar si la entrada está vacía
+  if (entradaTxt.trim() === "") {
     return true;
   }
   // Retorna true solamente si la expresión regular encuentra coincidencias en la cadena.
-  return /[A-ZÁÉÍÓÚÜÑ]|[^A-Za-z0-9\s]/.test(cadena);
+  return /[A-ZÁÉÍÓÚÜÑ]|[^A-Za-z0-9\s]/.test(entradaTxt);
 }
 
 // Capturar entradas de texto
 
 btnEncriptar.addEventListener("click", () => {
-  let texto = entrada.value;
+  let txt = entrada.value;
 
-  validarTexto(texto) ? textoNoValido() : encriptar(texto);
+  validarTexto(txt) ? textoNoValido() : encriptar(txt);
 });
 
 btnDesencriptar.addEventListener("click", () => {
-  let texto = entrada.value;
+  let txt = entrada.value;
 
-  validarTexto(texto) ? textoNoValido() : desencriptar(texto);
+  validarTexto(txt) ? textoNoValido() : desencriptar(txt);
 });
 
 // Copiar texto de salida
