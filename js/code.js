@@ -53,7 +53,7 @@ function validarTexto(entradaTxt) {
     return true;
   }
   // Retorna true solamente si la expresión regular encuentra coincidencias en la cadena.
-  return /[A-ZÁÉÍÓÚÜÑ]|[^A-Za-z0-9\s]/.test(entradaTxt);
+  return /[A-ZÁÉÍÓÚÜ]|[^A-Za-z0-9\sñ]/.test(entradaTxt);
 }
 
 // Capturar entradas de texto
