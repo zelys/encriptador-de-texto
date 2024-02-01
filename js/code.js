@@ -36,16 +36,21 @@ function desencriptar(texto) {
 function textoNoValido() {
   avisoEntrada.style.color = "#FF0000";
   avisoEntrada.style.fontWeight = "700";
-  avisoEntrada.textContent = "Para comenzar, debes ingresar un texto valido.";
+  avisoEntrada.textContent = "Para comenzar, ingresar un texto valido.";
   setTimeout(() => {
     avisoEntrada.removeAttribute("style");
-    avisoEntrada.textContent = "Solo letras minúsculas y sin acentos.";
+    avisoEntrada.textContent =
+      "No ingresar mayúsculas, caracteres especiales y acentos.";
   }, 2500);
 }
 
 // Validar texto de entrada
 
 function validarTexto(cadena) {
+  // Verificar si la cadena está vacía
+  if (cadena.trim() === "") {
+    return true;
+  }
   // Retorna true solamente si la expresión regular encuentra coincidencias en la cadena.
   return /[A-ZÁÉÍÓÚÜÑ]|[^A-Za-z0-9\s]/.test(cadena);
 }
