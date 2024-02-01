@@ -76,7 +76,7 @@ main {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  width: 100%;
+  width: auto;
   gap: 1rem;
   margin: 1rem 0 1rem 0;
 }
@@ -194,10 +194,13 @@ footer {
     text-align: center;
   }
 
-  .logo {
+  .logo,
+  .salida-aviso {
     margin: 0;
   }
-  main {
+
+  main,
+  .entrada {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -205,11 +208,7 @@ footer {
   }
 
   .entrada {
-    margin: 168px 0px 0px 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+    margin: 168px 0 0 0;
   }
 
   .aviso {
@@ -224,10 +223,6 @@ footer {
     justify-items: center;
   }
 
-  .salida-aviso {
-    margin: 0;
-  }
-
   #salida-texto {
     width: 630px;
     height: 338px;
@@ -239,29 +234,21 @@ footer {
 }
 
 @media screen and (max-width: 720px) {
-  #entrada-texto {
+  #entrada-texto,
+  .aviso,
+  .botones,
+  .salida {
     width: 90%;
   }
 
   .botones {
     display: grid;
-    width: 90%;
   }
 
   .btn-encriptar,
-  .btn-desencriptar {
-    width: 100%;
-  }
-
-  .salida {
-    width: 90%;
-  }
-
+  .btn-desencriptar,
+  .btn-copiar,
   #salida-texto {
-    width: 100%;
-  }
-
-  .btn-copiar {
     width: 100%;
   }
 }
